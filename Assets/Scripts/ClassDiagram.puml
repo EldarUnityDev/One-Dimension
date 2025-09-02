@@ -1,0 +1,240 @@
+﻿@startuml
+class AttackBehavior {
+    + deathEffect : GameObject
+    + playerAttack : bool
+    + oneHit : bool
+}
+class BackgroundBlock {
+    + squarePrefab : GameObject
+    + baseColor : Color
+    + myBrown : Color
+    + fillNeeded : bool
+}
+class BackgroundShimmer {
+    + baseColor : Color
+    + shineColor : Color
+    - shimmerTimer : float
+}
+class BloodEffect {
+    - spriteRenderer : SpriteRenderer
+    + effectTime : float
+}
+class ButtonScript {
+    + myButton : Button
+}
+class CoinAudioScript {
+}
+class CoinBehavior {
+    - rb : Rigidbody2D
+    - shimmerTimer : float
+    - spriteRenderer : SpriteRenderer
+    + baseColor : Color
+    + shineColor : Color
+    + mySoundEffect : GameObject
+}
+class DashBehavior {
+    + lifetime : float
+    + curLifetime : float
+    - spriteRenderer : SpriteRenderer
+    + hitColor : Color
+    + player : GameObject
+    + decayTime : float
+}
+class DoorScript {
+    + myTwoRooms : List<Stages>
+    + playerOutside : bool
+    + backgroundChanged : bool
+    + backgroundLineIn : GameObject
+    + backgroundLineOut : GameObject
+    - Start() : void
+    + ScanTheRoom() : void
+    + LoadRoom() : void
+    + UseDoor() : void
+}
+class EnemyBehavior {
+    + attacking : bool
+    + recovering : bool
+    + actionChosen : bool
+    + moveSpeed : float
+    + telegraphTime : float
+    + attackDuration : float
+    + attackDistance : float
+    + recoveryTime : float
+    + coinCount : int
+    + attackObj : GameObject
+    + player : GameObject
+    + coinPrefab : GameObject
+    + bloodEffect : GameObject
+    + bloodSpeed : float
+    + slainSound : AudioClip
+    + coinDropSound : AudioClip
+    - spriteRenderer : SpriteRenderer
+    - audioSource : AudioSource
+    - Awake() : void
+    - Start() : void
+    - Update() : void
+    - Attack() : IEnumerator
+    + Approach() : void
+    + Die() : void
+    + SpawnEffectIni() : void
+    - OnDestroy() : void
+}
+class LevelManager {
+    + resourcesSaved : List<int>
+    + title : GameObject
+    + controls : GameObject
+    + menuGameObject : GameObject
+    + levelLine : GameObject
+    + creditsText : GameObject
+    + inMainMenu : bool
+    + enemies : List<GameObject>
+    + transitionToggled : bool
+    + deathScreenToggled : bool
+    + transitionPoint : GameObject
+    + deathScreen : GameObject
+    + currentStageNumber : int
+    + stages : List<Stages>
+    + dialogue : GameObject
+    + dialogueName : GameObject
+    + dialogueLine : GameObject
+    + dialogueNameText : TextMeshProUGUI
+    + dialogueLineText : TextMeshProUGUI
+    + switchToEndButton : GameObject
+    + fightButton : GameObject
+    + tempFather : GameObject
+    + musicButton : GameObject
+    + isDialogueActive : bool
+    + doors : List<DoorScript>
+    - OnEnable() : void
+    + MusicButton() : void
+    + MenuOnOff() : void
+    + SaveResources() : void
+    + CreditsOnOff() : void
+    + ControlsOnOff() : void
+    + Resume() : void
+    + StartNewGame() : void
+    + RestartSection() : void
+    + StartNewSection() : void
+    - ResetPlayerPosition(x : float, duration : float) : IEnumerator
+    + ShowDialogue() : void
+    + SpawnFighters() : void
+    - OnDestroy() : void
+}
+class MusicController {
+    + myText : TextMeshProUGUI
+    + musicOn : bool
+    + musicSwitch() : void
+}
+class PlayerMovement {
+    + ableToMove : bool
+    + attackObj : GameObject
+    + shieldObj : GameObject
+    + shieldBreakContainer : GameObject
+    + dashObj : GameObject
+    + throwingKnife : GameObject
+    + moveSpeed : float
+    + dashLength : float
+    - rb : Rigidbody2D
+    - moveInput : float
+    + facingRight : bool
+    + shielded : bool
+    + blockOffset : float
+    + attackDisableTimer : bool
+    + attackLongevity : float
+    + myCoinsNumber : int
+    + shieldsCount : int
+    + knivesCount : int
+    + dashEligible : bool
+    + counterEligible : bool
+    + currentDash : GameObject
+    + counterTarget : GameObject
+    + errorObj : GameObject
+    + doorPrompt : GameObject
+    + coinUI : GameObject
+    + shieldUI : GameObject
+    + knivesUI : GameObject
+    + autoShielded : bool
+    - Awake() : void
+    + ShowErrorMessage(message : string) : void
+    + CounterAttack() : void
+    + Attack() : void
+    + ThrowKnife() : void
+    + Dash() : void
+    + RefreshResources() : void
+    + Die() : void
+}
+class References {
+}
+class ShopScript {
+    + errorObj : GameObject
+    - Start() : void
+    + ShowErrorMessage(message : string) : void
+    + BuyShield() : void
+    + BuyKnife() : void
+    + BuyAutoShield() : void
+}
+class SpearManAI {
+    + attacking : bool
+    + recovering : bool
+    + actionChosen : bool
+    + moveSpeed : float
+    + telegraphTime : float
+    + attackDuration : float
+    + attackDistance : float
+    + recoveryTime : float
+    + coinCount : int
+    + attackObj : GameObject
+    + player : GameObject
+    + coinPrefab : GameObject
+    + slainSound : AudioClip
+    + coinDropSound : AudioClip
+    - spriteRenderer : SpriteRenderer
+    - audioSource : AudioSource
+    - Awake() : void
+    - Start() : void
+    - Update() : void
+    - Attack() : IEnumerator
+    + Approach() : void
+    + Die() : void
+    - OnDestroy() : void
+}
+class Stages {
+    + enemies : List<GameObject>
+    + position : List<float>
+    + dialogueName : List<string>
+    + dialogueLines : List<string>
+    + transitionRight : bool
+    + hasIntro : bool
+}
+class ThrowingKnifeScript {
+    - Start() : void
+    + SetDirection(facingRight : bool) : void
+}
+class TransitionPoint {
+    - shimmerTimer : float
+    - spriteRenderer : SpriteRenderer
+    + baseColor : Color
+    + shineColor : Color
+    + levelManager : GameObject
+    + shop : GameObject
+    + transitionText : GameObject
+    - OnDisable() : void
+}
+MonoBehaviour <|-- AttackBehavior
+MonoBehaviour <|-- BackgroundBlock
+MonoBehaviour <|-- BackgroundShimmer
+MonoBehaviour <|-- BloodEffect
+MonoBehaviour <|-- ButtonScript
+MonoBehaviour <|-- CoinAudioScript
+MonoBehaviour <|-- CoinBehavior
+MonoBehaviour <|-- DashBehavior
+MonoBehaviour <|-- DoorScript
+MonoBehaviour <|-- EnemyBehavior
+MonoBehaviour <|-- LevelManager
+MonoBehaviour <|-- MusicController
+MonoBehaviour <|-- PlayerMovement
+MonoBehaviour <|-- ShopScript
+MonoBehaviour <|-- SpearManAI
+MonoBehaviour <|-- ThrowingKnifeScript
+MonoBehaviour <|-- TransitionPoint
+@enduml
