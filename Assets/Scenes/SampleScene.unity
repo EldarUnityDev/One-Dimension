@@ -3853,6 +3853,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759251184}
   m_CullTransparentMesh: 1
+--- !u!1001 &797926912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1694646773}
+    m_Modifications:
+    - target: {fileID: 2946645126809782973, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_Name
+      value: off screen bug
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946645126809782973, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+--- !u!4 &797926913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209673519197775878, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
+  m_PrefabInstance: {fileID: 797926912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802148820
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,8 +6347,8 @@ MonoBehaviour:
     - Mom
     dialogueLines:
     - '"Honey! Come home! Dinner''s ready! Where''s my brave bug hunter?"'
-    transitionRight: 0
-    hasIntro: 0
+    transitionRight: 1
+    hasIntro: 1
   - enemies:
     - {fileID: 2946645126809782973, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
     - {fileID: 2946645126809782973, guid: 138e2996583217d4180ff29e9d5226c5, type: 3}
@@ -6297,7 +6363,7 @@ MonoBehaviour:
     - '"Son, I want you to kill those pesky BUGS, lest they eat our CROPS and we
       die of hunger!"'
     transitionRight: 1
-    hasIntro: 0
+    hasIntro: 1
   - enemies:
     - {fileID: 709428393921856619, guid: 4e65455cf8fec5b4ab238a90cec3ad42, type: 3}
     - {fileID: 709428393921856619, guid: 4e65455cf8fec5b4ab238a90cec3ad42, type: 3}
@@ -6315,8 +6381,8 @@ MonoBehaviour:
     dialogueLines:
     - '"Boy! Stop right there! What''s that in your pockets? Give it, lest you want
       to be slain!"'
-    transitionRight: 0
-    hasIntro: 0
+    transitionRight: 1
+    hasIntro: 1
   - enemies:
     - {fileID: 6391088427306459493, guid: c743b2da354c87a408166d5574a313ac, type: 3}
     - {fileID: 6391088427306459493, guid: c743b2da354c87a408166d5574a313ac, type: 3}
@@ -6338,8 +6404,8 @@ MonoBehaviour:
     dialogueLines:
     - '"Fool! What have you done?! Murder is against the law. Prepare to pay the
       price."'
-    transitionRight: 0
-    hasIntro: 0
+    transitionRight: 1
+    hasIntro: 1
   - enemies:
     - {fileID: 8575334246629112171, guid: a3dbfe2b4ff1c134e84de7e153a3f655, type: 3}
     - {fileID: 709428393921856619, guid: 4e65455cf8fec5b4ab238a90cec3ad42, type: 3}
@@ -6354,16 +6420,16 @@ MonoBehaviour:
     - Bellos The Royal Spear
     dialogueLines:
     - '"God! Guide my spear through this madman''s heart!"'
-    transitionRight: 0
-    hasIntro: 0
+    transitionRight: 1
+    hasIntro: 1
   - enemies: []
     position: []
     dialogueName:
     - Mom
     dialogueLines:
     - '"Honey! Come home! Dinner''s ready! Where''s my brave bug hunter?"'
-    transitionRight: 0
-    hasIntro: 0
+    transitionRight: 1
+    hasIntro: 1
   dialogue: {fileID: 2116120873}
   dialogueName: {fileID: 1457645689}
   dialogueLine: {fileID: 881320688}
@@ -7701,6 +7767,7 @@ Transform:
   - {fileID: 79619206}
   - {fileID: 1755463796}
   - {fileID: 1474096233}
+  - {fileID: 797926913}
   - {fileID: 8499614447635091658}
   - {fileID: 1765436918}
   m_Father: {fileID: 0}

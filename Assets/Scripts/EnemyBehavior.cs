@@ -75,6 +75,13 @@ public class EnemyBehavior : MonoBehaviour
         Color startColor = Color.red;
         Color endColor = Color.black;
 
+        Vector3 direction = new Vector3();
+        Vector3 currPosition;
+        if (attackObj != null)
+        {
+            direction = (player.transform.position - transform.position).normalized;
+            currPosition = transform.position;
+        }
         while (elapsed < telegraphTime)
         {
             elapsed += Time.deltaTime;
@@ -85,9 +92,6 @@ public class EnemyBehavior : MonoBehaviour
 
         if (attackObj != null)
         {
-            Vector3 direction = (player.transform.position - transform.position).normalized;
-            Vector3 currPosition = transform.position;
-
             float enemyHalfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
             float attackHalfWidth = attackObj.GetComponent<SpriteRenderer>().bounds.extents.x;
 
@@ -112,7 +116,7 @@ public class EnemyBehavior : MonoBehaviour
         // Calculate direction to player
         //Vector2 direction = (player.transform.position - transform.position).normalized;
 
-       // Vector2 newPosition = rb.position + direction * moveSpeed * Time.deltaTime;
+        // Vector2 newPosition = rb.position + direction * moveSpeed * Time.deltaTime;
         //rb.MovePosition(newPosition);
 
         //2nd way

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCsript : MonoBehaviour
+public class NPCsñript : MonoBehaviour
 {
     public bool startedMoving;
     // Start is called before the first frame update
